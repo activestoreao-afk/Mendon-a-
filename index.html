@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stiviandra Mendonça — Um Universo a Descobrir</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#03030b;color:#f7f1ff;font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+.space{position:fixed;inset:0;z-index:-5;background:radial-gradient(circle at 50% 20%,#201653 0,#0b0820 38%,#03030b 78%)}
+.space:before,.space:after{content:"";position:absolute;inset:-20%;background-image:radial-gradient(2px 2px at 10% 20%,#fff,transparent),radial-gradient(1px 1px at 30% 75%,#fff,transparent),radial-gradient(2px 2px at 62% 16%,#fff,transparent),radial-gradient(1px 1px at 82% 57%,#fff,transparent),radial-gradient(1px 1px at 48% 42%,#fff,transparent),radial-gradient(1px 1px at 91% 14%,#fff,transparent),radial-gradient(1px 1px at 70% 85%,#fff,transparent);background-size:260px 260px;opacity:.8;animation:drift 40s linear infinite}
+.space:after{opacity:.35;background-size:430px 430px;animation-duration:60s;animation-direction:reverse}
+@keyframes drift{to{transform:translate(-60px,80px)}}
+.nebula{position:fixed;border-radius:50%;filter:blur(80px);opacity:.16;z-index:-4}.n1{width:420px;height:420px;left:-170px;top:35%;background:#7d36c8}.n2{width:480px;height:480px;right:-200px;top:60%;background:#256cc2}
+section{min-height:100vh;padding:80px 22px;display:flex;align-items:center;justify-content:center;position:relative}
+.hero{text-align:center;flex-direction:column}.eyebrow{font:600 10px Arial,sans-serif;letter-spacing:4px;color:#b9a5d8;margin:0 0 20px}.hero h1{font-size:clamp(58px,12vw,145px);font-weight:400;line-height:.88;letter-spacing:-6px;margin:0}.hero h1 span,.content h2 span,.final h2 span{color:#d7baff;font-style:italic}.intro{max-width:650px;color:#aaa4b8;font:15px/1.9 Arial,sans-serif;margin:30px 0}.btn{border:1px solid #b899e055;background:#151027;color:#fff;border-radius:50px;padding:15px 26px;font:600 11px Arial;letter-spacing:1px;cursor:pointer;transition:.3s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px #8654ff33}
+.planet{position:absolute;border-radius:50%;box-shadow:inset -22px -18px 32px #0009,0 0 55px #9875ff35}.p1{width:90px;height:90px;left:7%;top:20%;background:radial-gradient(circle at 30% 25%,#e7baff,#75469c 55%,#241332)}.p2{width:46px;height:46px;right:10%;top:32%;background:radial-gradient(circle at 30% 25%,#ffe2ac,#a75550 60%,#321525)}.ring{position:absolute;width:160px;height:35px;border:1px solid #bd9bff66;border-radius:50%;right:5%;top:66%;transform:rotate(-18deg)}
+.scroll{position:absolute;bottom:28px;font:9px Arial;letter-spacing:2px;color:#716a7e}
+.intro-section{flex-direction:column}.content{max-width:900px;width:100%}.number{font:11px Arial;color:#81729a}.content h2{font-size:clamp(42px,7vw,78px);font-weight:400;line-height:1.02;margin:10px 0 35px}.content p{font:16px/2 Arial,sans-serif;color:#a8a2b2;max-width:720px}.quote{font-size:80px;color:#8066a0;line-height:.4;margin-bottom:15px}
+.gallery{flex-direction:column}.gallery-head{width:min(950px,100%);display:flex;gap:22px}.gallery-head h2{font-size:clamp(42px,7vw,75px);font-weight:400;margin:8px 0}.scene{width:min(900px,100%);height:550px;position:relative;display:flex;align-items:center;justify-content:center}.orbit{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid #bba1dc24;border-radius:50%}.o1{width:770px;height:390px}.o2{width:580px;height:295px}
+.card{width:330px;z-index:5;transform:rotate(-2deg);cursor:pointer}.photo{height:390px;background:#eae7ef;padding:8px;box-shadow:0 22px 65px #000b}.photo img{width:100%;height:100%;object-fit:cover;display:block}.fallback{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#18102e,#080713);color:#a294ad;font:11px/2 Arial;letter-spacing:2px}.caption{background:#0d0a19;padding:16px;border:1px solid #9b7bc522}.caption small{font:9px Arial;color:#806f99;letter-spacing:2px}.caption h3{font-size:22px;font-weight:400;margin:7px 0}.caption p{font:12px/1.6 Arial;color:#8e8999;margin:0}
+.mini{position:absolute;width:120px;height:150px;background:#eee;padding:5px;box-shadow:0 12px 40px #000a;z-index:4}.mini img{width:100%;height:100%;object-fit:cover}.m1{left:10%;top:17%;transform:rotate(-10deg)}.m2{right:9%;top:14%;transform:rotate(9deg)}.m3{right:16%;bottom:7%;transform:rotate(-7deg)}
+.mplanet{position:absolute;border-radius:50%;box-shadow:inset -8px -8px 15px #0008}.mp1{width:25px;height:25px;left:19%;top:8%;background:#d37c64}.mp2{width:17px;height:17px;right:19%;top:9%;background:#b8d7e8}.mp3{width:32px;height:32px;left:12%;bottom:12%;background:#7950af}.mp4{width:15px;height:15px;right:12%;bottom:24%;background:#d3b77e}
+.controls{display:flex;align-items:center;gap:20px}.controls button{width:42px;height:42px;border:1px solid #a98dc955;border-radius:50%;background:transparent;color:#fff;cursor:pointer}.dots{display:flex;gap:7px}.dot{width:6px;height:6px;border-radius:50%;background:#625a6c}.dot.active{background:#e2d1ff;box-shadow:0 0 10px #c9a9ff}
+.message{text-align:center}.message .content{max-width:720px}.final{text-align:center;flex-direction:column}.sun{width:130px;height:130px;border-radius:50%;margin-bottom:35px;background:radial-gradient(circle at 30% 25%,#ffd8ac,#a34f7c 55%,#24132f);box-shadow:inset -20px -18px 28px #0008,0 0 75px #bd78ff44}.final h2{font-size:clamp(45px,8vw,85px);font-weight:400;line-height:1.02;margin:0}.final .btn{margin-top:35px}
+@media(max-width:700px){.hero h1{letter-spacing:-4px}.p1{width:58px;height:58px;left:3%}.p2{width:32px;height:32px;right:4%}.scene{height:500px}.o1{width:96%;height:305px}.o2{width:78%;height:245px}.card{width:min(285px,78vw)}.photo{height:335px}.mini{width:76px;height:102px}.m1{left:1%;top:15%}.m2{right:1%;top:13%}.m3{right:4%;bottom:9%}.content h2{margin-bottom:25px}.content p{font-size:14px;line-height:1.85}}
+</style>
+</head>
+<body>
+<div class="space"></div><div class="nebula n1"></div><div class="nebula n2"></div>
+
+<section class="hero">
+<div class="planet p1"></div><div class="planet p2"></div><div class="ring"></div>
+<p class="eyebrow">✦ UMA HISTÓRIA ESCRITA NAS ESTRELAS ✦</p>
+<h1>Stiviandra<br><span>Mendonça</span></h1>
+<p class="intro">Há pessoas que podem ser descritas em poucas palavras. Stiviandra não parece ser uma delas. Para conhecê-la, é preciso tempo, atenção e curiosidade — como quem observa um universo e percebe que cada estrela esconde uma história.</p>
+<button class="btn" onclick="document.getElementById('desc').scrollIntoView()">Começar a descobrir ✦</button>
+<div class="scroll">DESLIZA PARA CONTINUAR ↓</div>
+</section>
+
+<section class="intro-section" id="desc"><div class="content">
+<div class="quote">“</div><p class="eyebrow">01 · A PRIMEIRA IMPRESSÃO</p>
+<h2>Um universo <span>complicado,</span><br>mas bonito.</h2>
+<p>Stiviandra Mendonça é daquelas pessoas que não cabem facilmente numa definição. Ela é inteligente, decidida e tem uma maneira própria de olhar para as coisas, como se estivesse sempre a analisar mais do que aquilo que deixa aparecer. Ao mesmo tempo, existe nela um lado espontâneo, imprevisível e um pouquinho maluquinho que quebra qualquer tentativa de a colocar dentro de uma única caixa. Talvez seja justamente essa mistura que faça dela alguém tão interessante: não é simples, não é previsível e certamente não é uma pessoa que se descobre inteira numa única conversa.</p>
+</div></section>
+
+<section class="gallery" id="galeria">
+<div class="gallery-head"><span class="number">02</span><div><p class="eyebrow">CONSTELAÇÃO DE MEMÓRIAS</p><h2>Conhecê-la é<br>explorar <em>estrelas.</em></h2></div></div>
+<div class="scene">
+<div class="orbit o1"></div><div class="orbit o2"></div>
+<div class="mplanet mp1"></div><div class="mplanet mp2"></div><div class="mplanet mp3"></div><div class="mplanet mp4"></div>
+<div class="card" id="card">
+<div class="photo"><img id="mainImg" src="fotos/foto1.jpg" alt="Fotografia de Stiviandra" onerror="this.style.display='none';document.getElementById('fallback').style.display='flex'"><div class="fallback" id="fallback">COLOCA AS TUAS FOTOS AQUI<br><br>foto1.jpg<br>foto2.jpg<br>foto3.jpg<br>foto4.jpg<br>foto5.jpg<br>foto6.jpg</div></div>
+<div class="caption"><small id="num">01 / 06</small><h3 id="title">O primeiro brilho</h3><p id="text">Uma fotografia, uma memória e uma nova parte deste universo para descobrir.</p></div>
+</div>
+<div class="mini m1"><img src="fotos/foto2.jpg" alt=""></div><div class="mini m2"><img src="fotos/foto3.jpg" alt=""></div><div class="mini m3"><img src="fotos/foto4.jpg" alt=""></div>
+</div>
+<div class="controls"><button id="prev">←</button><div class="dots" id="dots"></div><button id="next">→</button></div>
+</section>
+
+<section class="message"><div class="content">
+<p class="eyebrow">03 · O QUE EXISTE POR TRÁS DAS ESTRELAS</p>
+<h2>Talvez o mais interessante seja aquilo que <span>ainda não se descobriu.</span></h2>
+<p>Existe uma inteligência que aparece na forma como ela pensa, uma determinação que aparece quando decide seguir um caminho e uma personalidade complexa que nem sempre se deixa compreender à primeira vista. E depois existe aquele pequeno detalhe que torna tudo mais humano: a capacidade de ser completamente séria num momento e, sem qualquer aviso, revelar um lado divertido e meio maluquinho no outro. É uma combinação improvável, mas é precisamente por isso que funciona. Stiviandra não precisa ser perfeita para ser admirável; precisa apenas ser ela mesma.</p>
+</div></section>
+
+<section class="final"><div class="sun"></div>
+<p class="eyebrow">04 · UMA ÚLTIMA CONSTELAÇÃO</p>
+<h2>Algumas pessoas passam.<br><span>Outras deixam estrelas.</span></h2>
+<p class="intro">E talvez esta página seja apenas uma pequena maneira de guardar algumas delas: fotografias, momentos e palavras sobre uma pessoa que parece ter sempre mais uma parte do seu universo para revelar.</p>
+<button class="btn" onclick="scrollTo({top:0,behavior:'smooth'})">↻ Voltar ao início</button>
+</section>
+
+<script>
+const data=[
+["foto1.jpg","O primeiro brilho","Uma fotografia, uma memória e uma nova parte deste universo para descobrir."],
+["foto2.jpg","Uma pequena galáxia","Há detalhes que só aparecem quando olhamos com mais atenção."],
+["foto3.jpg","Entre estrelas","Mais um instante guardado numa constelação feita de memórias."],
+["foto4.jpg","Um planeta diferente","Porque cada lado de uma pessoa pode revelar um mundo completamente novo."],
+["foto5.jpg","Luz no escuro","Mesmo os momentos simples podem ganhar brilho quando se tornam lembranças."],
+["foto6.jpg","Para continuar a descobrir","Este universo não termina numa fotografia; há sempre mais alguma coisa para conhecer."]
+];
+let i=0;
+const img=document.getElementById("mainImg"), fallback=document.getElementById("fallback"), num=document.getElementById("num"), title=document.getElementById("title"), text=document.getElementById("text"), dots=document.getElementById("dots");
+function dotsRender(){dots.innerHTML="";data.forEach((_,n)=>{const d=document.createElement("span");d.className="dot"+(n===i?" active":"");d.onclick=()=>show(n);dots.appendChild(d)})}
+function show(n){i=(n+data.length)%data.length;fallback.style.display="none";img.style.display="block";img.src="fotos/"+data[i][0];img.onerror=()=>{img.style.display="none";fallback.style.display="flex"};num.textContent=String(i+1).padStart(2,"0")+" / 06";title.textContent=data[i][1];text.textContent=data[i][2];dotsRender()}
+document.getElementById("next").onclick=()=>show(i+1);
+document.getElementById("prev").onclick=()=>show(i-1);
+document.getElementById("card").addEventListener("click",()=>{if(img.naturalWidth){window.open(img.src,"_blank")}})
+dotsRender();setInterval(()=>show(i+1),5000);
+</script>
+</body>
+</html>
