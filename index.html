@@ -59,4 +59,12 @@ function renderDots(){dots.innerHTML="";data.forEach((_,n)=>{let d=document.crea
 function show(n){i=(n+data.length)%data.length;img.src=data[i][0];img.style.display="block";fb.style.display="none";img.onerror=()=>{img.style.display="none";fb.style.display="flex"};num.textContent=String(i+1).padStart(2,"0")+" / 06";title.textContent=data[i][1];text.textContent=data[i][2];renderDots()}
 document.getElementById("next").onclick=()=>show(i+1);document.getElementById("prev").onclick=()=>show(i-1);renderDots();setInterval(()=>show(i+1),5000);
 </script>
+<!-- Música -->
+<audio id="bgMusic" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" class="music-button">
+  🎵 Tocar música
+</button>
 </body></html>
